@@ -1,6 +1,7 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
 #######Script python p
+#script by G. Lasalle! : Gille.lassalle@rennes.inra.fr
 
 #Pre : repertoire de read1 + rep de read2
 #post : lancement auto de clonefilter
