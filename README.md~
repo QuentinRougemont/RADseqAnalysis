@@ -11,10 +11,7 @@ Inferring the demographic history underlying parallel genomic divergence among p
 ecotypes. Mol Ecol. Accepted Author Manuscript. doi:10.1111/mec.13664
 
 ## Dependencies
-```cutadapt``` Download [cutadapt] (https://github.com/marcelm/cutadapt) 
-
+```cutadapt``` Download [cutadapt] (https://github.com/marcelm/cutadapt)
 ```gbsx``` Download [gbsx] (https://github.com/GenomicsCoreLeuven/GBSX)
-
 ```stacks``` Download [stacks] (http://catchenlab.life.illinois.edu/stacks/) (see details of installation on the website)
-
 ```vcftools``` Download [vcftools] (http://vcftools.sourceforge.net/)
