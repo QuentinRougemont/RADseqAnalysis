@@ -6,7 +6,10 @@ TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
 NCPU=8 #number of CPU, can be set to any number
 
 #can be customized very easily
-mkdir 02-demultiplex
+if [ ! -d "02-demultiplex/" ]  ; then  
+    echo "creation du dossier" ; 
+    mkdir 02-demultiplex/; 
+fi
 
 outfile="02-demultiplex"
 folder="01-data/cutadapt"

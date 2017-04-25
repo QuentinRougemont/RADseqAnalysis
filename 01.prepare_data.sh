@@ -2,11 +2,14 @@
 
 #miniscript to prepare the architecture, move the file and filter them according to some purity criterion
 #We work on a total of 8 library, we have eight fastq.gz file for the Read1 and eight fastq.gz for the read2
-TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
+#TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
 
 #Organise and prepare the file
 #prepare directory to store the data
-mkdir 01-data
+if [ ! -d "01-data/" ]  ; then  
+    echo "creation du dossier" ; 
+    mkdir 01-data/; 
+fi
 mv *fastq.gz 01-data/
 
 #Filter reads based on quality filter:

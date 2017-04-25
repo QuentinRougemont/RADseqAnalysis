@@ -3,7 +3,15 @@
 #script to Run ustacks
 #WARNING: this contains two version, comment out the one that you do not wish to use
 # recuperation de l'email
-mkdir 03-stacks
+if [ ! -d "03-stacks/" ]  ; then  
+    echo "creation du dossier" ; 
+    mkdir 03-stacks/; 
+fi
+mkdir 02-demultiplex/clone_filter/R1
+mkdir 02-demultiplex/clone_filter/R2
+mv 02-demutliplex/clone_filter/*R1* 02-demultiplex/clone_filter/R1
+mv 02-demutliplex/clone_filter/*R2* 02-demultiplex/clone_filter/R2
+
 EMAIL="yourmail@yourmail"
 QUEUE=$1
 shift 1 
@@ -35,7 +43,7 @@ echo "ustacks -t fastq -f \$INPUT -i \$ID -o $outfile -m 4 -M 3 -N 5 -d -r -p 8 
 
 # boucle sur qsub
 cpt=1
-for FILE in $*; do
+for FILE in 02-demultiplex/clone_filter do
     qsub -o /home/qrougemont/work/RAD/Stacks/log/ustacks -q $QUEUE -v INPUT=$FILE -v ID=$cpt ustacks.qsub 
     let cpt+=1
 done

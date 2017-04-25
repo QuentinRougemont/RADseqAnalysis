@@ -7,7 +7,10 @@ TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
 NCPU=8 #number of CPU, can be set to any number
 
 mkdir 01-data/cutadapt 01-data/cutadapt_2
-mkdir log
+if [ ! -d "log/" ]  ; then  
+    echo "creation du dossier" ; 
+    mkdir log/; 
+fi
 
 input1=$( ls 01-data/*R1.*gz | sed -e 's/01-data\///g' )
 #input2=$( ls 01-data/*R2.*gz | sed -e 's/01-data\///g' )
